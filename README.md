@@ -1,4 +1,4 @@
-# PythonGPT | Document Organization & Chat | 💻💡
+# PythonGPT | Dynamic Programming with LLMs | 💻💡
 PythonGPT implements a generative language model powered shell using Python. When run, the script is capable of creating, writing and indexing Python to provide a dynamic coding experience for building language model applications.
 
 PythonGPT will eventually integrate with [DoctorGPT](https://github.com/FeatureBaseDB/DoctorGPT) to provide dynamic calls for relevant documents when needed in a prompt. 
