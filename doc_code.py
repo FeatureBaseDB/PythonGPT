@@ -103,7 +103,7 @@ while True:
 			error_msg = str(e)
 			print("system>", error_msg)
 			print("system> Providing traceback to ChatGPT for correction...")
-			document['text'] = code + "\n" + traceback_str + "\n" + error_msg
+			document['text'] = code + "\n" + traceback_str + "\n" + error_msg + "\nRemember, we are using '''start_index = answer.find('```python') + len('```python')''' to detect code to run. Please follow that format.\n"
 	else:
 		print("system> Failed to compile a valid solution. Please provide one in a document and retry.")
 
