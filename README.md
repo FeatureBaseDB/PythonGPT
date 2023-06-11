@@ -30,7 +30,7 @@ system> Running code...
 system> This code prints a cow using escape sequences and the backslash (\) to represent the cow in ASCII art.
 ```
 
-The repository uses tools such as [Weaviate](https://weaviate.io/) for dense vector search and embedding handling, and [FeatureBase](https://featurebase.com/) for back of the book indexing and graph traversal of terms, questions and document fragments.
+The repository uses tools such as [Weaviate](https://weaviate.io/) for dense vector search and embedding handling, and [FeatureBase](https://featurebase.com/) for  indexing and graph traversal of terms, queries and code fragments.
 
 The project is installed, configured and run locally from the command line. You will need a [Google Cloud](https://cloud.google.com/) account with [Vision enabled](https://cloud.google.com/vision/docs/before-you-begin), an [OpenAI account](https://openai.com), a [FeatureBase cloud](https://cloud.featurebase.com) account and a [Weaviate cloud](https://console.weaviate.cloud/) account to run the code.
 
