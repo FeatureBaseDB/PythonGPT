@@ -37,8 +37,8 @@ The project is installed, configured and run locally from the command line. You 
 ## Theory of Operation
 This project asks ChatGPT to write Python, then executes that Python with the [exec()](https://docs.python.org/3/library/functions.html#exec) function. Additionally:
 
-1. User entry is managed by a simple Python powered shell. History of entries is saved in a file for recall.
-2. Entries are also stored in Weaviate and FeatureBase. Entries and the generated code is analyzed for keyterms.
+1. User entry is managed by a simple Python powered shell. History of entry is saved in a file for recall.
+2. Entries are also stored in Weaviate and FeatureBase. Entries and the generated code are analyzed for keyterms.
 3. Subsequent queries create searches against the graph stored in FeatureBase and the embeddings (vectors) in Weaviate.
 4. Results are used to create dynamic prompts. This allows the LLM to reference previously generated functions.
 
