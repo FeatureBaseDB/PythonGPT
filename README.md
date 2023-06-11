@@ -1,4 +1,4 @@
-# PythonGPT | Dynamic Programming with LLMs | 💻💡
+# PythonGPT | Dynamic Programming with LLMs | 💻🐚📝
 PythonGPT implements a generative language model powered shell using Python. When run, the script is capable of writing Python to accomplish various tasks. 
 
 PythonGPT will eventually integrate with [DoctorGPT](https://github.com/FeatureBaseDB/DoctorGPT) for access to relevant documents when needed. 
