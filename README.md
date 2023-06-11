@@ -1,7 +1,9 @@
 # PythonGPT | Dynamic Programming with LLMs | 💻💡
-PythonGPT implements a generative language model powered shell using Python. When run, the script is capable of creating, writing and indexing Python to provide a dynamic coding experience for building language model applications.
+PythonGPT implements a generative language model powered shell using Python. When run, the script is capable of writing Python to accomplish various tasks. 
 
-PythonGPT will eventually integrate with [DoctorGPT](https://github.com/FeatureBaseDB/DoctorGPT) to provide dynamic calls for relevant documents when needed in a prompt. 
+PythonGPT will eventually integrate with [DoctorGPT](https://github.com/FeatureBaseDB/DoctorGPT) for access to relevant documents when needed. 
+
+Before you do anything else, please review the [disclaimer](https://github.com/FeatureBaseDB/PythonGPT/blob/main/DISCLAIMER.md). Use of this project, without accepting the risks involved, is prohibited.
 
 Here's an example of what PythonGPT can do:
 
@@ -23,8 +25,7 @@ system> Running code...
     \(o)____(o)/
        ~~   ~~
 
-system> This code prints a cow using escape sequences, the backslash (\) character and the new line character (
-) to represent the cow in ASCII art.
+system> This code prints a cow using escape sequences and the backslash (\) to represent the cow in ASCII art.
 ```
 
 The repository uses tools such as [Weaviate](https://weaviate.io/) for dense vector search and embedding handling, and [FeatureBase](https://featurebase.com/) for back of the book indexing and graph traversal of terms, questions and document fragments.
@@ -32,8 +33,18 @@ The repository uses tools such as [Weaviate](https://weaviate.io/) for dense vec
 The project is installed, configured and run locally from the command line. You will need a [Google Cloud](https://cloud.google.com/) account with [Vision enabled](https://cloud.google.com/vision/docs/before-you-begin), an [OpenAI account](https://openai.com), a [FeatureBase cloud](https://cloud.featurebase.com) account and a [Weaviate cloud](https://console.weaviate.cloud/) account to run the code.
 
 ## Theory of Operation
-The process of indexing a document is divided into three main steps:
+This project asks ChatGPT to write Python, then executes that Python with the [exec()]() function. Additionally:
 
+1. User entry is managed by a simple Python powered shell. History of entries is saved in a file for recall.
+2. Entries are also stored in Weaviate and FeatureBase. Entries and the generated code is analyzed for keyterms.
+3. Subsequent queries create searches against the graph stored in FeatureBase and the embeddings (vectors) in Weaviate.
+4. Results are used to create dynamic prompts. This allows the LLM to reference previously generated functions.
+
+Future work:
+
+1. Add functionality to allow the user to save the Python written by the LLM to disk.
+2. Add functionality to integrate with DoctorGPT to allow the LLM to reference advanced Python use, or other knowledge.
+3. Add functionality to dynamically alter the shell experience using generative plugins.
 
 ## Install Instructions
 Eensure you follow these instructions carefully. It is suggested you use [ChatGPT](https://chat.openai.com/) to assist you with any errors. Simply paste in the entire content of this README into ChatGPT before asking your question about the install process.
@@ -48,6 +59,7 @@ Change into the directory to prepare for installing the packages required to run
 `cd ~/<path_to_code>/PythonGPT`
 
 On Windows, you'll want to do this last part in Powershell.
+
 ### Create a Config File
 Copy the `config.py.example` file to `config.py`. Use this file to store the various strings and tokens for the services utilized by this project.
 
@@ -68,23 +80,18 @@ Your Weaviate Cloud config will be complete. This sandbox cluster will expire in
 #### FeatureBase Cloud
 Go to [FeatureBase Cloud](https://cloud.featurebase.com/) and sign up for an account.
 
-Once you have signed up, you will be taken to the dashboard. Click on "Databases" to the left. Click on "NEW DATABASE". Select the 8GB database option and create the database, naming it `doc_gpt`
+Once you have signed up, you will be taken to the dashboard. Click on "Databases" to the left. Click on "NEW DATABASE". Select the 8GB database option and create the database, naming it `python_gpt`
 
-On the Databases page, click on your new database. Copy the `Query endpoint` by clicking on the URL. Paste the URL into the `config.py` file mentioned above and DELETE the `/query/sql` path on the end, leaving a URL without a `/` on the end.
+On the Databases page, click on your new database. Copy the `Query endpoint` by clicking on the URL. Paste the URL into the `config.py` file mentioned above and DELETE the `/query/sql` path on the end, leaving a URL without a `/` on the end. It should look something like this:
 
-##### FeatureBase Token
-Keeping in mind your username/password you used for FeatureBase, open a terminal and navigate into the repository's directory.
+```
+# featurebase
+featurebase_endpoint = "https://query.featurebase.com/v2/databases/d071c1e12-9dfc-41af-9103-d071c1e12"
+```
 
-Run the following to obtain a token for FeatureBase:
+Next, click on `configuration` in the left panel, then `Manage API Keys`. Click `Create a Key`, name the key, and click `Create`. Copy the `secret` key token shown. 
 
-`python fb_token.py`
-
-You'll receive output that includes the FeatureBase token. Place this token in the `config.py` file under the `featurebase_token` variable.
-
-*NOTE*: You may need to use `python3` instead of `python` on some Python installs.
-
-## Continue Setup
-You'll need to grab an auth token for GPT-X from OpenAI, and install the required packages for Python to run the code.
+Place this token in the `config.py` file under the `featurebase_token` variable.
 
 ### OpenAI Auth
 Go to [OpenAI](https://openai.com/) and signup or login. Navigate to the [getting started page](https://platform.openai.com/) and click on your user profile at the top right. 
@@ -92,7 +99,7 @@ Go to [OpenAI](https://openai.com/) and signup or login. Navigate to the [gettin
 Select "view API keys" and then create a new API key. Copy this key and put it in the `config.py` file under the `openai_token` variable.
 
 ### Install Requirements
-There are many packages used for this project that are required for execution. You may inspect the packages by looking at the `requirements.txt` file in the root directory of the project.
+There are a few packages used for this project that are required for execution. You may inspect the packages by looking at the `requirements.txt` file in the root directory of the project.
 
 To install the required packages, ensure you have Python 3.10.11 or greater installed. It may be possible to use a lower version of Python, but this package has only been tested on Python 3.10.x, so your mileage may vary. It is left up to the user to determine the best way to update Python, but you may want to ask [ChatGTP](https://chat.openai.com) about it.
 
@@ -101,22 +108,39 @@ Run the following to install the required packages, use the `pip` package for Py
 `pip install -r requirements.txt`
 
 ### Interact with the PythonGPT
-This is the step we've all been waiting for. In this step, you will interact directly with the document in a chat. Please note, for this particular release, the system does not recall previous questions. This will be addressed in an updated version soon.
+To begin using the language model shell, enter the following.
 
 ```
 python doc_code.py
 ```
 
-
+History is accessible by hitting the up and down arrows at the prompt.
 
 ```
-Documents Directory
-===================
-0. animate.pdf
-Enter the number of the file to chat with: 0
-Entering conversation with animate.pdf. Use ctrl-C to end interaction.
-user-9l1s[animate.pdf]> What is the relation between imaginary quantities and the square root of -1?
-bot> The quantity i is defined as the square root of -1, and any quantity except zero has two square roots, each the negative of the other, so it is with -1; and we thus get two quantities, i and -i. They are absolutely interchangeable.
+kord@bob PythonGPT $ python3 doc_code.py          
+abiding-ape[python3]> draw a cow in ascii
+```
+
+Advanced interaction with the Internet and filesystem is posible:
+
+```
+abiding-ape[python3]> ping google 20 times and write the logs to a file
+system> Calling GPTChat for code...please wait.
+system> Showing code...
+import os
+import subprocess
+
+with open("ping_logs.txt", "w") as f:
+    for i in range(20):
+        response = subprocess.getoutput("ping -c 1 google.com")
+        f.write(f"Ping {i+1}:\n")
+        f.write(response)
+        f.write("\n\n")
+    print("Ping logs saved to ping_logs.txt")
+
+system> Running code...
+Ping logs saved to ping_logs.txt
+system> This code initiates a loop in which the computer sends 20 pings to Google. The computer stores the response from each ping in the file 'ping_logs.txt' using the Python modules 'os' and 'subprocess' to execute the ping commands.
 ```
 
 Please open tickets for any issues you encounter and consider contributing to this repository with pull requests. It is only through open collaboration that the "existential threat" of Strong AI is mitigated.
