@@ -71,11 +71,11 @@ To use Weaviate and FeatureBase with DoctorGPT, you will need to signup for thei
 #### Weaviate Cloud
 Go to [Weaviate Cloud](https://console.weaviate.cloud/dashboard) and sign up for an account.
 
-After signup, navigate to the dashboard. Click on the "Create Cluster" button to create a new cluster. Name the cluster and ensure authentication is enabled.
+After signup, navigate to the dashboard. Click on the `Create Cluster` button to create a new cluster. Name the cluster and ensure authentication is enabled.
 
-After the cluster is created, click on "Details" and click on the cluster URL to copy the cluster address. Paste this address into the value for the `weaviate_cluster` variable in the config file.
+After the cluster is created, click on `Details` and click on the cluster URL to copy the cluster address. Paste this address into the value for the `weaviate_cluster` variable in the config file.
 
-Next, click on the key next to "Enabled Authentication" to copy the Weaviate token. Paste this into the config file for the `weaviate_token` variable.
+Next, click on the key next to `Enabled Authentication` to view and copy the Weaviate token. Paste this token into the config file for the `weaviate_token` variable.
 
 Your Weaviate Cloud config will be complete. This sandbox cluster will expire in 14 days.
 
