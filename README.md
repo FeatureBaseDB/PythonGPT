@@ -35,7 +35,7 @@ The repository uses tools such as [Weaviate](https://weaviate.io/) for dense vec
 The project is installed, configured and run locally from the command line. You will need a [Google Cloud](https://cloud.google.com/) account with [Vision enabled](https://cloud.google.com/vision/docs/before-you-begin), an [OpenAI account](https://openai.com), a [FeatureBase cloud](https://cloud.featurebase.com) account and a [Weaviate cloud](https://console.weaviate.cloud/) account to run the code.
 
 ## Theory of Operation
-This project asks ChatGPT to write Python, then executes that Python with the [exec()]() function. Additionally:
+This project asks ChatGPT to write Python, then executes that Python with the [exec()](https://docs.python.org/3/library/functions.html#exec) function. Additionally:
 
 1. User entry is managed by a simple Python powered shell. History of entries is saved in a file for recall.
 2. Entries are also stored in Weaviate and FeatureBase. Entries and the generated code is analyzed for keyterms.
