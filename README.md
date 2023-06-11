@@ -110,13 +110,13 @@ Run the following to install the required packages, use the `pip` package for Py
 `pip install -r requirements.txt`
 
 ### Interact with the PythonGPT
-To begin using the language model shell, enter the following.
+To begin using the language model shell, enter the following:
 
 ```
 python doc_code.py
 ```
 
-History is accessible by hitting the up and down arrows at the prompt.
+History is accessible by hitting the up and down arrows at the prompt:
 
 ```
 kord@bob PythonGPT $ python3 doc_code.py          
