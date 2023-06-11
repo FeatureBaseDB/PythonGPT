@@ -1,6 +1,8 @@
 # PythonGPT
 config.py
 documents/*
+.DoctorGPT
+.auth
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
