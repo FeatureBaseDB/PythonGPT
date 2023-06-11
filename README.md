@@ -3,8 +3,10 @@ PythonGPT implements a generative language model powered shell using Python. Whe
 
 PythonGPT will eventually integrate with [DoctorGPT](https://github.com/FeatureBaseDB/DoctorGPT) for access to relevant documents when needed. 
 
+## Disclaimer
 Before you do anything else, please review the [disclaimer](https://github.com/FeatureBaseDB/PythonGPT/blob/main/DISCLAIMER.md). Use of this project, without accepting the risks involved, is prohibited.
 
+## Example
 Here's an example of what PythonGPT can do:
 
 ```
