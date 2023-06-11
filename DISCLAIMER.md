@@ -10,12 +10,12 @@ Please read this disclaimer carefully before using this project. This project ru
 
 4. Professional Advice: The project and the generated code should not be considered a substitute for professional advice or services. If you have specific concerns or requirements, it is recommended to consult with a qualified professional or seek expert assistance before using this program.
 
-5. Limitation of Liability: In no event shall the creators of this project, FeatureBase, Weaviate and OpenAI, be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of the use or inability to use this project or the associated generated code. This includes, but is not limited to, damages for loss of data, loss of profits, business interruption, or any other commercial damages or losses.
+5. Limitation of Liability: In no event shall the creators of this project, FeatureBase, Weaviate or OpenAI, be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of the use or inability to use this project or the associated generated code. This includes, but is not limited to, damages for loss of data, loss of profits, business interruption, or any other commercial damages or losses.
 
 6. Legal Compliance: Ensure that your use of this project and the associated generated code complies with all applicable laws, regulations, and terms of service of the platforms or systems involved.
 
 7. Prohibited Use: The use of this project for any illegal purposes is strictly prohibited. You may not engage in any activities that violate applicable laws, regulations, or ethical standards. The creators of this project, including FeatureBase, do not endorse or support any illegal or unethical activities conducted using this program or the associated generated code.
 
-By proceeding to use this project, you agree to indemnify and hold harmless the creators of this project, FeatureBase, Weaviate and OpenAI, from any claims, damages, or losses arising from your use of the project or the associated generated code.
+By proceeding to use this project, you agree to indemnify and hold harmless the creators of this project, FeatureBase, Weaviate or OpenAI, from any claims, damages, or losses arising from your use of the project or the associated generated code.
 
 Remember, the use of dynamically generated Python code carries inherent risks, and you should exercise caution and diligence when utilizing this project.
