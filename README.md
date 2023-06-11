@@ -100,7 +100,49 @@ Go to [OpenAI](https://openai.com/) and signup or login. Navigate to the [gettin
 
 Select "view API keys" and then create a new API key. Copy this key and put it in the `config.py` file under the `openai_token` variable.
 
-### Install Requirements
+### Docker Install
+If you are security minded, running this project in a Docker container is the way to proceed safely.
+
+Ensure the `config.py` file is created and contains the proper tokens and endpoints. Then, enter the following to build the Docker container:
+
+```
+docker build -t pythongpt .
+```
+
+Run the container to enter the shell:
+
+```
+kord@bob PythonGPT $ docker run -it pythongpt   
+system> You are logged in as `abiding-ape`.
+abiding-ape[python3]> show the url for the latest xkcd
+system> Calling GPTChat for code...please wait.
+system> Showing code...
+import requests
+from bs4 import BeautifulSoup
+
+def fetch_latest_xkcd_url():
+    url = 'https://xkcd.com/'
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.content, 'html.parser')
+        result = soup.find('div', id='comic')
+        latest_xkcd_url = 'https:' + result.img['src']
+        return latest_xkcd_url
+    else:
+        return 'Error fetching the latest xkcd!'
+
+latest_xkcd_url = fetch_latest_xkcd_url()
+print(latest_xkcd_url)
+
+system> Running code...
+https://imgs.xkcd.com/comics/iceberg.png
+
+```
+
+### Install Requirements for Running Locally
+Running PythonGPT locally gives access to more interesting applications, such as opening applications dynamically, opening URLs, and saving code locally. However, this method of running the project is highly dicouraged. If we haven't convinced you by now this is dangerous, please proceed.
+
 There are a few packages used for this project that are required for execution. You may inspect the packages by looking at the `requirements.txt` file in the root directory of the project.
 
 To install the required packages, ensure you have Python 3.10.11 or greater installed. It may be possible to use a lower version of Python, but this package has only been tested on Python 3.10.x, so your mileage may vary. It is left up to the user to determine the best way to update Python, but you may want to ask [ChatGTP](https://chat.openai.com) about it.

@@ -3,3 +3,5 @@ openai==0.27.4
 weaviate-client==3.16.1
 prompt_toolkit==3.0.38
 coolname==2.2.0
+pygments==2.15.1
+beautifulsoup4==4.12.2

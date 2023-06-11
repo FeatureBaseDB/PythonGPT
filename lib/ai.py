@@ -11,8 +11,6 @@ import traceback
 
 from string import Template
 
-from bs4 import BeautifulSoup
-
 from lib.database import weaviate_schema, weaviate_query, weaviate_update
 from lib.database import featurebase_query
 
