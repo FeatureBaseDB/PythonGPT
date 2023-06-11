@@ -98,7 +98,7 @@ Place this token in the `config.py` file under the `featurebase_token` variable.
 ### OpenAI Auth
 Go to [OpenAI](https://openai.com/) and signup or login. Navigate to the [getting started page](https://platform.openai.com/) and click on your user profile at the top right. 
 
-Select "view API keys" and then create a new API key. Copy this key and put it in the `config.py` file under the `openai_token` variable.
+Select `view API keys` and then create a new API key. Copy this key and put it in the `config.py` file under the `openai_token` variable.
 
 ### Docker Install
 If you are security minded, running this project in a Docker container is the way to proceed safely.
