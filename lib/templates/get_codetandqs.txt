@@ -1,0 +1,15 @@
+1. In step three, you will output a Python dictionary with the information for the TOP three (3) keyterms and related explanation from Python source code.
+2. The Python source code is:
+"""
+$code
+"""
+3. The prompt used to write the code was:
+"""
+$prompt
+"""
+3. Now, output a Python dictionary containing answer to the request:
+# example for you
+# code_meta = {"code": "print ('Hello, World!')", "prompt": "Print 'hello world'.", "keyterms": ['python3', 'print', 'string'], "explanation": "Writing code to output 'Hello, World!'"}
+# a. create an explanation that is related to the code's contents
+# b. As you analyze this document, please remember to exclude stop words from the keyterms. Make sure each topic or section is represented by a variety of relevant index entries, capturing the essence and main points of each section. Try to understand what kind of index entries the audience is likely to search for. What terms, ideas, or topics would be most useful or interesting to them? Lastly, please maintain consistency in the form of terms you use. Whether it's singular vs. plural, or capitalization, adhere to standard indexing conventions. This consistency is key for user experience and the overall readability of the document.
+code_meta = {"code": $code, "promp": $prompt,

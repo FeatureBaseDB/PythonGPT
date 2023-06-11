@@ -1,0 +1,13 @@
+1. Read the content in step 3 and build a python dictionary to answer the question in step 4.
+2. There are keyterms associated with this content:
+"""
+$keyterms
+"""
+3. The the PDF titled "$title" contains the following:
+"""
+$text
+"""
+4. Output a python dictionary for the answer:
+# python dict with the question, answer for the question
+# pdf_meta = {"question": "Who is Winnie-the-Pooh?", "answer": "Winnie-the-Pooh is a fictional stuffed bear who loves honey."}
+pdf_meta = {"question": "$question",
