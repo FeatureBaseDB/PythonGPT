@@ -144,17 +144,18 @@ https://imgs.xkcd.com/comics/iceberg.png
 To begin using the language model shell, enter the following:
 
 ```
-python doc_code.py
+docker run -it pythongpt
 ```
 
 History is accessible by hitting the up and down arrows at the prompt:
 
 ```
-kord@bob PythonGPT $ python3 doc_code.py          
+kord@bob PythonGPT $ docker run -it pythongpt  
+system> You are logged in as `abiding-ape`.    
 abiding-ape[python3]> draw a cow in ascii
 ```
 
-Advanced interaction with the Internet and filesystem is posible:
+Advanced interaction with the Internet and filesystem is possible:
 
 ```
 abiding-ape[python3]> ping google 20 times and write the logs to a file
