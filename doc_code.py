@@ -1,9 +1,19 @@
+import os
+import sys
+
+# attempt to prevent running locally
+def is_running_in_docker():
+    return os.path.exists('/.dockerenv')
+if is_running_in_docker():
+    print("We appear to be running in Docker...")
+else:
+	print("You are not allowed to run this locally. See the `DISCLAIMER.md` file.")
+	sys.exit()
+
 import weaviate
 import config
 import pprint
-import sys
 import json
-import os
 import time
 import random
 import traceback
@@ -70,7 +80,7 @@ while True:
 	# call the AI
 	print("system> Calling GPTChat for code...please wait.")
 
-	# we'll try up to 4 times to get GPTChat to write the code, passing failures in for correction
+	# we'll try up to X times to get GPTChat to write the code, passing failures in for correction
 	for x in range(4):
 		try:
 			document = ai("ask_gptcode", document)

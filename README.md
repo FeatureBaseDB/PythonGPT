@@ -60,8 +60,6 @@ Change into the directory to prepare for installing the packages required to run
 
 `cd ~/<path_to_code>/PythonGPT`
 
-On Windows, you'll want to do this last part in Powershell.
-
 ### Create a Config File
 Copy the `config.py.example` file to `config.py`. Use this file to store the various strings and tokens for the services utilized by this project.
 
@@ -101,7 +99,7 @@ Go to [OpenAI](https://openai.com/) and signup or login. Navigate to the [gettin
 Select `view API keys` and then create a new API key. Copy this key and put it in the `config.py` file under the `openai_token` variable.
 
 ### Docker Install
-If you are security minded, running this project in a Docker container is the way to proceed safely.
+Running this project in a Docker container is required and you must agree to the disclaimer to use this code.
 
 Ensure the `config.py` file is created and contains the proper tokens and endpoints. Then, enter the following to build the Docker container:
 
@@ -140,18 +138,7 @@ https://imgs.xkcd.com/comics/iceberg.png
 
 ```
 
-### Install Requirements for Running Locally
-Running PythonGPT locally gives access to more interesting applications, such as opening applications dynamically, opening URLs, and saving code locally. However, this method of running the project is highly dicouraged. If we haven't convinced you by now this is dangerous, please proceed.
-
-There are a few packages used for this project that are required for execution. You may inspect the packages by looking at the `requirements.txt` file in the root directory of the project.
-
-To install the required packages, ensure you have Python 3.10.11 or greater installed. It may be possible to use a lower version of Python, but this package has only been tested on Python 3.10.x, so your mileage may vary. It is left up to the user to determine the best way to update Python, but you may want to ask [ChatGTP](https://chat.openai.com) about it.
-
-Run the following to install the required packages, use the `pip` package for Python:
-
-`pip install -r requirements.txt`
-
-### Interact with the PythonGPT
+### Interact with PythonGPT
 To begin using the language model shell, enter the following:
 
 ```

@@ -16,6 +16,8 @@ Please read this disclaimer carefully before using this project. This project ru
 
 7. Prohibited Use: The use of this project for any illegal purposes is strictly prohibited. You may not engage in any activities that violate applicable laws, regulations, or ethical standards. The creators of this project, including FeatureBase, do not endorse or support any illegal or unethical activities conducted using this program or the associated generated code.
 
+8. Usage within Docker: The creators of this project require running the associated code within a Docker container. Running the code outside of a Docker container may increase the risk of harm to your computer or other systems. By using this project, you agree to use the code within a Docker container and understand you are legally bound to use the code only within a Docker container. Any use of the code outside of a Docker container is in violation of the terms and conditions stated in this disclaimer and the license and may result in legal consequences.
+
 By proceeding to use this project, you agree to indemnify and hold harmless the creators of this project, FeatureBase, Weaviate or OpenAI, from any claims, damages, or losses arising from your use of the project or the associated generated code.
 
 Remember, the use of dynamically generated Python code carries inherent risks, and you should exercise caution and diligence when utilizing this project.
