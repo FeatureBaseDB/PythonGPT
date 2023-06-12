@@ -1,10 +1,12 @@
 # PythonGPT | Dynamic Programming with LLMs | 💻🐚📝
-PythonGPT implements a generative language model powered shell using Python. When run, the script is capable of writing Python to accomplish various tasks. 
+PythonGPT implements a generative language model powered shell using Python. When run, the script is capable of writing and running Python. 
 
 PythonGPT will eventually integrate with [DoctorGPT](https://github.com/FeatureBaseDB/DoctorGPT) for access to relevant documents when needed. 
 
 ## Disclaimer
-Before you do anything else, please review the [disclaimer](https://github.com/FeatureBaseDB/PythonGPT/blob/main/DISCLAIMER.md) and the [license](https://github.com/FeatureBaseDB/PythonGPT/blob/main/LICENSE). Use of this project without accepting the terms of the disclaimer is strictly prohibited.
+Before you do anything else, please review the [disclaimer](https://github.com/FeatureBaseDB/PythonGPT/blob/main/DISCLAIMER.md) and the [license](https://github.com/FeatureBaseDB/PythonGPT/blob/main/LICENSE). Use of this project without accepting the terms of the disclaimer is strictly prohibited and highly discouraged.
+
+Running this code locally is prohibited, if it is not run inside a Docker or equivalently containerized system.
 
 ## Example
 Here's an example of what PythonGPT can do:
